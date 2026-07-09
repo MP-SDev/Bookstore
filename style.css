@@ -1,0 +1,79 @@
+body {
+    background-color: #05171E;
+    color: white;
+}
+
+header {
+    display: flex;
+    background-color: #0D3240;
+}
+
+.headerContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 1000px;
+}
+
+.headerContainer p {
+    margin-left: 5px;
+}
+
+.headerContainer img {
+    height: 40px;
+    margin-right: 5px;
+}
+
+main {
+    display: flex;
+}
+
+.bookArticle {
+    display: flex;
+    flex-direction: column;
+    background-color: #0D3240;
+    margin-top: 50px !important;
+    border-radius: 30px;
+}
+
+.detailBookData {
+    display: flex;
+    justify-content: space-between;
+}
+
+.likeDetailBookData {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.likeDetailBookData button {
+    height: 25px;
+    padding: 5px;
+    background-color: #0D3240;
+    border: none;
+}
+
+.likeDetailBookData img {
+    height: 20px;
+}
+
+.pictureBook {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #124758;
+}
+
+.pictureBook img {
+    height: 150px;
+}
+
+.bookComment {
+    max-height: 200px;
+}
+
+footer {
+    display: flex;
+}
+

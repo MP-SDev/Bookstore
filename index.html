@@ -5,9 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DA Bookstore</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./styles/standard.css">
+    <link rel="stylesheet" href="./styles/assets.css">
     <script src="./script.js"></script>
 </head>
 <body>
-    
+    <header>
+        <div class=" headerContainer content">
+            <img src="./assets/img/clker-free-vector-images-book-306468.svg" alt="Logo DA bookstore">
+            <h1>DABookstore</h1> 
+            <p>- get your book here</p>
+        </div>
+    </header>
+    <main>
+        <article class="bookArticle content" id="bookArticle">
+            <div class="bookName dividingLine paddingArticle">
+                <h2>Buchname</h2>
+            </div>
+           <div class="pictureBook dividingLine paddingArticle">
+                <img src="./assets/img/clker-free-vector-images-book-306468.svg" alt="Abbildung Buch">
+           </div>
+           <div class="bookData dividingLine paddingArticle">
+                <div class="detailBookData">
+                    <p>Preis</p>
+                    <div class="likeDetailBookData">
+                        <p>like</p>
+                        <button><img src="./assets/img/heart-filled.png" alt="heart filled for like / heart unfilled for unlike"></button>
+                    </div>
+                </div>
+                <table>
+                    <tr>
+                        <td class="leftSideTable">Author</td>
+                        <td>:</td>
+                        <td>Name</td>
+                    </tr>
+                    <tr>
+                        <td class="leftSideTable">Erscheinungsjahr</td>
+                        <td>:</td>
+                        <td>Jahr</td>
+                    </tr>
+                    <tr>
+                        <td class="leftSideTable">Genre</td>
+                        <td>:</td>
+                        <td>Fantasy</td>
+                    </tr>
+                </table>
+           </div>
+           <div class="bookComment paddingArticle">
+                <h3>Kommentare:</h3>
+                <table>
+                    <tr>
+                        <td class="leftSideTable">username</td>
+                        <td>:</td>
+                        <td>Kommentar</td>
+                    </tr>
+                </table>
+
+           </div>
+        </article>
+    </main>
 </body>
 </html>
