@@ -6,6 +6,19 @@
     padding: 20px 25px;
 }
 
+table {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 150px;
+    overflow: auto;
+}
+
+td {
+    vertical-align: top;
+    padding: 2px;
+}
+
 .leftSideTable {
     width: 150px;
 }
