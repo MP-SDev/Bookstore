@@ -1,4 +1,4 @@
-function getBookArticleTemplate(bookName, price, likesNo, liked, author, year, genre) {
+function getBookArticleTemplate(bookName, price, likesNo, liked, author, year, genre, indexBook) {
     return `<article class="bookArticle">
                 <div class="bookName dividingLine paddingArticle">
                     <h2>${bookName}</h2>
@@ -34,10 +34,13 @@ function getBookArticleTemplate(bookName, price, likesNo, liked, author, year, g
                 </div>
                 <div class="bookComment paddingArticle" >
                         <h3>Kommentare:</h3>
-                        <table id="bookComments">
+                        <table id="book${indexBook}Comments">
                             
                         </table>
-
+                </div>
+                <div class="commentInputContainer">
+                    <input type="text" name="commentInput" id="commentInput" value="Schreibe deinen Kommentar...">
+                    <button onclick="sendComment(${indexBook})"><img src="" alt="Send"></button>
                 </div>
             </article>`
 }

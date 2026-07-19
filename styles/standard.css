@@ -14,3 +14,7 @@ a {
     max-width: 1440px;
     margin: 0 auto;
 }
+
+.redText {
+    color: rgba(255, 0, 0, 0.9);
+}
