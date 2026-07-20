@@ -1,16 +1,34 @@
 function renderBookOverview(){
     let bookArticleRef = document.getElementById('bookArticlesContainer');
     bookArticleRef.innerHTML = "";
-    let liked = "";
     for (let indexBook = 0; indexBook < books.length; indexBook++) {
-        if (books[indexBook].liked === true) {
+        bookArticleRef.innerHTML += getBookArticleTemplate(books[indexBook].name, books[indexBook].price, books[indexBook].author, books[indexBook].publishedYear, books[indexBook].genre, indexBook);        
+        renderBookLikes(indexBook);
+        renderBookComments(indexBook);
+    }
+}
+
+function renderBookLikes(indexBook) {
+    let bookLikesRef = document.getElementById('likesBookIndex' + indexBook);
+    let bookLikedFromLocalStorage = localStorage.getItem('likedBookIndex' + indexBook);
+    let likesNo = books[indexBook].likes;
+    let liked = "";
+    if (bookLikedFromLocalStorage === 'true') {
             liked = 'filled';
+            likesNo = likesNo + 1;
         } else {
             liked = 'unfilled';
         }
-        bookArticleRef.innerHTML += getBookArticleTemplate(books[indexBook].name, books[indexBook].price, books[indexBook].likes, liked, books[indexBook].author, books[indexBook].publishedYear, books[indexBook].genre, indexBook);        
-        renderBookComments(indexBook);
+    bookLikesRef.innerHTML = getBookLikesTemplate(indexBook, likesNo, liked);
+}
+
+function toggleLiked(indexBook) {
+    if (localStorage.getItem('likedBookIndex' + indexBook) === 'true') {
+        localStorage.setItem('likedBookIndex' + indexBook, 'false');
+    } else if (localStorage.getItem('likedBookIndex' + indexBook) === 'false'){
+        localStorage.setItem('likedBookIndex' + indexBook, 'true');
     }
+    renderBookLikes(indexBook);
 }
 
 function renderBookComments(indexBook) {
@@ -35,6 +53,14 @@ function setLocalStorageCommentsFromDB() {
     for (let indexBook = 0; indexBook < books.length; indexBook++) {
         if (localStorage.getItem('commentsBookIndex' + indexBook) === null) {
             localStorage.setItem('commentsBookIndex' + indexBook, JSON.stringify(books[indexBook].comments));
+        }
+    }
+}
+
+function setLocalStorageLikedFromDB() {
+    for (let indexBook = 0; indexBook < books.length; indexBook++) {
+        if (localStorage.getItem('likedBookIndex' + indexBook) === null) {
+            localStorage.setItem('likedBookIndex' + indexBook, books[indexBook].liked);
         }
     }
 }

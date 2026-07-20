@@ -1,4 +1,4 @@
-function getBookArticleTemplate(bookName, price, likesNo, liked, author, year, genre, indexBook) {
+function getBookArticleTemplate(bookName, price, author, year, genre, indexBook) {
     return `<article class="bookArticle">
                 <div class="bookName dividingLine paddingArticle">
                     <h2>${bookName}</h2>
@@ -9,9 +9,8 @@ function getBookArticleTemplate(bookName, price, likesNo, liked, author, year, g
                 <div class="bookData dividingLine paddingArticle">
                         <div class="detailBookData">
                             <p>${price}€</p>
-                            <div class="likeDetailBookData">
-                                <p>${likesNo}</p>
-                                <button><img src="./assets/img/heart-${liked}.png" alt="heart filled for like / heart unfilled for unlike"></button>
+                            <div id="likesBookIndex${indexBook}" class="likeDetailBookData">
+                                
                             </div>
                         </div>
                         <table>
@@ -51,4 +50,9 @@ function getBookCommentTemplate(username, comment) {
                 <td>:</td>
                 <td>${comment}</td>
             </tr>`
+}
+
+function getBookLikesTemplate(indexBook, likesNo, liked) {
+    return `<p>${likesNo}</p>
+            <button onclick="toggleLiked(${indexBook})"><img src="./assets/img/heart-${liked}.png" alt="heart filled for like / heart unfilled for unlike"></button>`
 }
