@@ -56,3 +56,7 @@ function getBookLikesTemplate(indexBook, likesNo, liked) {
     return `<p>${likesNo}</p>
             <button onclick="toggleLiked(${indexBook})"><img src="./assets/img/heart-${liked}.png" alt="heart filled for like / heart unfilled for unlike"></button>`
 }
+
+function getUsernameTemplate(username) {
+    return `Actual user: ${username}`
+}

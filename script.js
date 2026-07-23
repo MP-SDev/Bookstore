@@ -42,9 +42,11 @@ function renderBookComments(indexBook) {
 
 function sendComment(indexBook) {
     let bookCommentRef = document.getElementById('book' + indexBook + 'Comments');
-    let commentInputRef = document.getElementById('commentInputBookIndex' + indexBook).value;
+    let commentInputRef = document.getElementById('commentInputBookIndex' + indexBook);
+    let commentInput = commentInputRef.value;
     let booksCommentsLocalStorageCache = JSON.parse(localStorage.getItem('commentsBookIndex' + indexBook));
-    booksCommentsLocalStorageCache.push({'name':'actualUser', 'comment':commentInputRef});
+    let usernameFromLocalStorage = localStorage.getItem('username');
+    booksCommentsLocalStorageCache.push({'name':usernameFromLocalStorage, 'comment':commentInput});
     localStorage.setItem('commentsBookIndex' + indexBook, JSON.stringify(booksCommentsLocalStorageCache));
     renderBookComments(indexBook);
 }
@@ -63,4 +65,34 @@ function setLocalStorageLikedFromDB() {
             localStorage.setItem('likedBookIndex' + indexBook, books[indexBook].liked);
         }
     }
+}
+
+ function openUsernameDialog() {
+    let usernameDialogRef = document.getElementById('usernameDialog');
+    usernameDialogRef.showModal();
+ }
+
+ function closeUsernameDialog() {
+    let usernameDialogRef = document.getElementById('usernameDialog');
+    usernameDialogRef.close();
+ }
+
+function changeUsername() {
+    let usernameFromInputRef = document.getElementById('usernameInput');
+    let usernameFromInput = usernameFromInputRef.value;
+    localStorage.setItem('username', usernameFromInput);
+    renderUsername();
+    event.preventDefault();
+    closeUsernameDialog();
+}
+
+function renderUsername() {
+    let shownUsernameRef = document.getElementById('shownUsername');
+    let usernameFromLocalStorage;
+    if (localStorage.getItem('username') === null) {
+        usernameFromLocalStorage = 'unknown';
+    } else {
+        usernameFromLocalStorage = localStorage.getItem('username');
+    }
+    shownUsernameRef.innerHTML = getUsernameTemplate(usernameFromLocalStorage);
 }

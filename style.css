@@ -10,18 +10,32 @@ header {
 
 .headerContainer {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     width: 1000px;
 }
 
-.headerContainer p {
+.headerLogoContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.headerLogoContainer p {
     margin-left: 5px;
 }
 
-.headerContainer img {
+.headerLogoContainer img {
     height: 40px;
     margin-right: 5px;
+}
+
+.headerUserContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 16px;
 }
 
 main {
@@ -33,6 +47,7 @@ main {
     flex-direction: column;
     background-color: #0D3240;
     margin-top: 50px !important;
+    margin-bottom: 50px !important;
     border-radius: 30px;
     width: 400px;
 }
