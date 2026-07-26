@@ -49,6 +49,7 @@ function sendComment(indexBook) {
     booksCommentsLocalStorageCache.push({'name':usernameFromLocalStorage, 'comment':commentInput});
     localStorage.setItem('commentsBookIndex' + indexBook, JSON.stringify(booksCommentsLocalStorageCache));
     renderBookComments(indexBook);
+    commentInputRef.value = "";
 }
 
 function setLocalStorageCommentsFromDB() {
@@ -69,11 +70,16 @@ function setLocalStorageLikedFromDB() {
 
  function openUsernameDialog() {
     let usernameDialogRef = document.getElementById('usernameDialog');
-    usernameDialogRef.showModal();
+    let usernameButtonRef = document.getElementById('usernameButton');
+    usernameButtonRef.classList.add('hide');
+    usernameDialogRef.show();
+
  }
 
  function closeUsernameDialog() {
     let usernameDialogRef = document.getElementById('usernameDialog');
+    let usernameButtonRef = document.getElementById('usernameButton');
+    usernameButtonRef.classList.remove('hide');
     usernameDialogRef.close();
  }
 

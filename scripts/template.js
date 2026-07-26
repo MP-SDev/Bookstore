@@ -38,7 +38,7 @@ function getBookArticleTemplate(bookName, price, author, year, genre, indexBook)
                         </table>
                 </div>
                 <div class="commentInputContainer">
-                    <input type="text" name="commentInput" id="commentInputBookIndex${indexBook}" placeholder="Schreibe deinen Kommentar...">
+                    <input type="text" name="commentInput" id="commentInputBookIndex${indexBook}" placeholder="Add your comment...">
                     <button onclick="sendComment(${indexBook})"><img src="./assets/icons/sendIcon.png" alt="Send"></button>
                 </div>
             </article>`

@@ -6,6 +6,8 @@ body {
 header {
     display: flex;
     background-color: #0D3240;
+    position: sticky;
+    top: 0;
 }
 
 .headerContainer {
@@ -41,6 +43,7 @@ header {
 .headerUserContainer button {
     background-color: #0D3240;
     color: #6AA8C0;
+    height: 30px;
     border: 1px solid #6AA8C0;
     border-radius: 5px;
 }
@@ -121,6 +124,25 @@ main {
 .commentInputContainer button {
     background-color: #0D3240;
     border: none;
+}
+
+.usernameDialogContainer {
+    background-color: #0D3240;
+    color: white;
+    height: 30px;
+    border: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.usernameDialogContainer input {
+    background-color: #124758;
+    color: white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #6AA8C0;
 }
 
 footer {

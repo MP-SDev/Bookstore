@@ -19,6 +19,10 @@ button {
     margin: 0 auto;
 }
 
+.hide {
+    display: none;
+}
+
 .redText {
     color: rgba(255, 0, 0, 0.9);
 }
