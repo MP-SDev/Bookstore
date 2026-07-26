@@ -38,6 +38,13 @@ header {
     padding-bottom: 16px;
 }
 
+.headerUserContainer button {
+    background-color: #0D3240;
+    color: #6AA8C0;
+    border: 1px solid #6AA8C0;
+    border-radius: 5px;
+}
+
 main {
     display: flex;
 }
@@ -87,6 +94,33 @@ main {
 
 .bookComment {
     max-height: 200px;
+}
+
+.commentInputContainer {
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    
+}
+
+.commentInputContainer input {
+    background-color: #124758;
+    color: white;
+    flex: 1;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #6AA8C0;
+}
+
+.commentInputContainer img {
+    height: 15px;
+    width: 25px;
+}
+
+.commentInputContainer button {
+    background-color: #0D3240;
+    border: none;
 }
 
 footer {

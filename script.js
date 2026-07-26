@@ -89,8 +89,10 @@ function changeUsername() {
 function renderUsername() {
     let shownUsernameRef = document.getElementById('shownUsername');
     let usernameFromLocalStorage;
+    let randomGuestNumber = Math.round((Math.random()*100));
     if (localStorage.getItem('username') === null) {
-        usernameFromLocalStorage = 'unknown';
+        usernameFromLocalStorage = 'guest' + randomGuestNumber;
+        localStorage.setItem('username', 'guest' + randomGuestNumber);
     } else {
         usernameFromLocalStorage = localStorage.getItem('username');
     }
