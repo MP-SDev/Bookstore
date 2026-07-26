@@ -1,3 +1,5 @@
+let randomGuestNumber = Math.round((Math.random()*100));
+
 function renderBookOverview(){
     let bookArticleRef = document.getElementById('bookArticlesContainer');
     bookArticleRef.innerHTML = "";
@@ -86,7 +88,12 @@ function setLocalStorageLikedFromDB() {
 function changeUsername() {
     let usernameFromInputRef = document.getElementById('usernameInput');
     let usernameFromInput = usernameFromInputRef.value;
-    localStorage.setItem('username', usernameFromInput);
+    if (usernameFromInput === "") {
+        localStorage.setItem('username', 'guest' + randomGuestNumber);
+    } else {
+        localStorage.setItem('username', usernameFromInput);
+    }
+    usernameFromInputRef.value = "";
     renderUsername();
     event.preventDefault();
     closeUsernameDialog();
@@ -95,7 +102,6 @@ function changeUsername() {
 function renderUsername() {
     let shownUsernameRef = document.getElementById('shownUsername');
     let usernameFromLocalStorage;
-    let randomGuestNumber = Math.round((Math.random()*100));
     if (localStorage.getItem('username') === null) {
         usernameFromLocalStorage = 'guest' + randomGuestNumber;
         localStorage.setItem('username', 'guest' + randomGuestNumber);
