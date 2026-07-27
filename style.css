@@ -24,6 +24,10 @@ header {
     align-items: center;
 }
 
+.headlineLogoRed {
+    color: rgba(255, 0, 0, 0.9);
+}
+
 .headerLogoContainer p {
     margin-left: 5px;
 }

@@ -39,7 +39,7 @@ function getBookArticleTemplate(bookName, price, author, year, genre, indexBook)
                 </div>
                 <div class="commentInputContainer">
                     <input type="text" name="commentInput" id="commentInputBookIndex${indexBook}" placeholder="Add your comment...">
-                    <button onclick="sendComment(${indexBook})"><img src="./assets/icons/sendIcon.png" alt="Send"></button>
+                    <button onclick="sendComment(${indexBook})" aria-label="send comment"><img src="./assets/icons/sendIcon.png" alt="Send"></button>
                 </div>
             </article>`
 }
@@ -54,7 +54,7 @@ function getBookCommentTemplate(username, comment) {
 
 function getBookLikesTemplate(indexBook, likesNo, liked) {
     return `<p>${likesNo}</p>
-            <button onclick="toggleLiked(${indexBook})"><img src="./assets/img/heart-${liked}.png" alt="heart filled for like / heart unfilled for unlike"></button>`
+            <button onclick="toggleLiked(${indexBook})" aria-label="toggle like and dislike"><img src="./assets/img/heart-${liked}.png" alt="heart filled for like, heart unfilled for unlike"></button>`
 }
 
 function getUsernameTemplate(username) {

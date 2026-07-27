@@ -17,17 +17,17 @@
         <div class="headerContainer content">
             <div class="headerLogoContainer">
                 <img src="./assets/img/clker-free-vector-images-book-306468.svg" alt="Logo DA bookstore">
-                <h1 class="redText">DA</h1><h1 class="headlineLogo">Bookstore</h1> 
+                <h1 class="headlineLogoRed">DA</h1><h1 class="headlineLogo">Bookstore</h1> 
                 <p>- get your book here</p>
             </div>
             <div class="headerUserContainer">
                 <p id="shownUsername"></p>
-                <button id="usernameButton" class="usernameButton" onclick="openUsernameDialog()">Sign in with your name</button>
+                <button id="usernameButton" class="usernameButton" onclick="openUsernameDialog()" aria-controls="usernameDialog">Sign in with your name</button>
                 <dialog id="usernameDialog" class="usernameDialogContainer">
                     <form>
                         <label for="usernameInput">Username:</label>
                         <input type="text" name="usernameInput" id="usernameInput" autocomplete="off">
-                        <button onclick="changeUsername()">Submit</button>
+                        <button onclick="changeUsername()" aria-controls="shownUsername">Submit</button>
                     </form>
                 </dialog>
             </div>

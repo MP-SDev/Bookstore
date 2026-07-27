@@ -23,7 +23,3 @@ button {
 .hide {
     display: none;
 }
-
-.redText {
-    color: rgba(255, 0, 0, 0.9);
-}
