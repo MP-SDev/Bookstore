@@ -111,6 +111,11 @@ main {
     
 }
 
+.commentInputContainer form {
+    display: flex;
+    flex: 1;
+}
+
 .commentInputContainer input {
     background-color: #124758;
     color: white;

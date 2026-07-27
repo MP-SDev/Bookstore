@@ -38,8 +38,10 @@ function getBookArticleTemplate(bookName, price, author, year, genre, indexBook)
                         </table>
                 </div>
                 <div class="commentInputContainer">
-                    <input type="text" name="commentInput" id="commentInputBookIndex${indexBook}" placeholder="Add your comment...">
-                    <button onclick="sendComment(${indexBook})" aria-label="send comment"><img src="./assets/icons/sendIcon.png" alt="Send"></button>
+                    <form>
+                        <input type="text" name="commentInput" id="commentInputBookIndex${indexBook}" placeholder="Add your comment...">
+                        <button onclick="sendComment(${indexBook})" aria-label="send comment"><img src="./assets/icons/sendIcon.png" alt="Send"></button>
+                    </form>
                 </div>
             </article>`
 }

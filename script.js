@@ -52,6 +52,7 @@ function sendComment(indexBook) {
     localStorage.setItem('commentsBookIndex' + indexBook, JSON.stringify(booksCommentsLocalStorageCache));
     renderBookComments(indexBook);
     commentInputRef.value = "";
+    event.preventDefault();
 }
 
 function setLocalStorageCommentsFromDB() {
