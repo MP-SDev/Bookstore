@@ -110,3 +110,10 @@ function renderUsername() {
     }
     shownUsernameRef.innerHTML = getUsernameTemplate(usernameFromLocalStorage);
 }
+
+function renderOnload() {
+    setLocalStorageCommentsFromDB(); 
+    setLocalStorageLikedFromDB(); 
+    renderUsername(); 
+    renderBookOverview();
+}
