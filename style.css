@@ -1,6 +1,7 @@
 body {
     background-color: #05171E;
     color: white;
+    font-size: 16px;
 }
 
 header {
@@ -147,5 +148,51 @@ main {
 
 footer {
     display: flex;
+}
+
+@media(max-width: 900px){
+    .headerLogoContainer p {
+        display: none;
+    }
+}
+
+@media(max-width: 750px){
+    .headlineLogo {
+        display: none;
+    }
+}
+
+@media(max-width: 550px){
+    .headerUserContainer {
+        align-items: flex-start;
+        width: 150px;
+    }
+    .usernameButton {
+        height: 50px !important;
+    }
+
+    .usernameDialogContainer {
+        height: 70px;
+    }
+    .usernameDialogContainer form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .usernameDialogContainer button {
+        margin-top: 3px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    .bookArticle {
+        width: 300px;
+    }
 }
 

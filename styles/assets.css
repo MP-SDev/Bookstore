@@ -22,3 +22,9 @@ td {
 .leftSideTable {
     width: 150px;
 }
+
+@media(max-width: 550px){
+    .leftSideTable {
+        width: 120px;
+    }
+}
